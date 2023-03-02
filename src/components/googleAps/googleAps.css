@@ -1,0 +1,12 @@
+.bg-deepblue {
+  background-image: linear-gradient(to right, #6a11cbad 0%, #2575fca1 100%);
+}
+.googleAps__item.MuiIconButton-root {
+  padding: 4px 10px !important;
+  border-radius: 10px !important;
+}
+.googleAps__item .MuiIconButton-label {
+  width: fit-content !important;
+  display: flex !important;
+  flex-direction: column !important;
+}

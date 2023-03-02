@@ -1,0 +1,21 @@
+.email-tabs {
+  width: 31%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-width: 0 !important;
+  color: rgb(105, 105, 105);
+  border-bottom-width: 1px;
+}
+.email-tabs-selected {
+  border-bottom-width: 3px !important;
+}
+
+.email-tabs:hover {
+  background-color: #d9d9d996;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}

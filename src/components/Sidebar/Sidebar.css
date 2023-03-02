@@ -1,0 +1,9 @@
+.sidebar__footer {
+  width: 190px;
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar__footer {
+    width: 162px;
+  }
+}

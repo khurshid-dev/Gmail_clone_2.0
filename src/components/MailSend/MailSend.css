@@ -1,0 +1,60 @@
+.mail-send {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 430px;
+  height: 330px;
+}
+.mail-send__header {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 0 15px;
+  color: #fff;
+  background: rgb(0, 47, 185);
+  background: linear-gradient(141deg, rgba(0, 47, 185, 1) 42%, rgba(0, 207, 255, 1) 84%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mail-send form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 14px;
+  padding: 10px;
+  position: relative;
+}
+.mail-send form input {
+  outline: none;
+  padding: 7px 5px;
+  border-bottom: 1px solid rgb(187, 187, 187);
+}
+.mail-send form input.message-input {
+  padding-bottom: 30%;
+  border-bottom: none;
+}
+
+.required {
+  color: rgb(192, 0, 0);
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  position: absolute;
+}
+.required.one {
+  position: absolute;
+  top: 16px;
+  left: 40px;
+}
+.required.two {
+  position: absolute;
+  top: 52px;
+  left: 80px;
+}
+.required.three {
+  position: absolute;
+  top: 89px;
+  left: 200px;
+}

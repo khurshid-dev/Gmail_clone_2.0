@@ -1,0 +1,36 @@
+.mail {
+  padding: 0 10px;
+}
+
+.mail__body {
+  margin: 20px 10px;
+  padding: 10px 25px;
+  height: 78vh;
+  background-color: #ffffff3b;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.6) inset;
+  -moz-box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.6) inset;
+  box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.6) inset;
+}
+.mail__bodyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mail__bodyHeader div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.mail__bodyHeader div h1 {
+  font-size: 16px;
+  font-weight: 700;
+}
+.mail__bodyHeader div p {
+  margin-left: -5px;
+  color: rgb(87, 87, 87);
+}
+
+.mail__message {
+  margin-top: 10px;
+}
