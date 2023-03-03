@@ -14,6 +14,7 @@ function MailSend() {
   const [title, setTitle] = useState("");
   const [subject, setSubject] = useState("");
   const [description, setDescription] = useState("");
+  const [time, setTime] = useState(`${new Date().getHours()} : ${new Date().getMinutes()}`);
 
   const titleChange = (e) => setTitle(e.target.value);
   const subjectChange = (e) => setSubject(e.target.value);
@@ -27,11 +28,13 @@ function MailSend() {
           title,
           subject,
           description,
+          time,
         })
       );
       setTitle("");
       setSubject("");
       setDescription("");
+      setTime();
     }
   };
 

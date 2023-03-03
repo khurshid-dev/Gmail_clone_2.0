@@ -1,8 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = [
   {
-    id: "1",
+    // id: nanoid(),
+
     title: "LinkedIn",
     subject: "Apply now: Product Designer",
     description:
@@ -10,7 +11,8 @@ const initialState = [
     time: "20 Feb",
   },
   {
-    id: "2",
+    // id: nanoid(),
+
     title: "Quincy Larson",
     subject: "Learn Linux for Beginners",
     description:
@@ -18,7 +20,8 @@ const initialState = [
     time: "20 Feb",
   },
   {
-    id: "3",
+    // id: nanoid(),
+
     title: "Dribbble",
     subject: "💼 New jobs + Live design career Q&A",
     description:
@@ -26,7 +29,8 @@ const initialState = [
     time: "22 Feb",
   },
   {
-    id: "4",
+    // id: nanoid(),
+
     title: "Deniz Deke",
     subject: "Hör auf dich fertig zu machen Rick",
     description:
@@ -34,14 +38,16 @@ const initialState = [
     time: "24 Feb",
   },
   {
-    id: "5",
+    // id: nanoid(),
+
     title: "Stack Overflow",
     subject: "Apply now: Product Designer",
     description: "The Overflow #166: Writing code for other people",
-    time: "10pm",
+    time: "25 Feb",
   },
   {
-    id: "6",
+    // id: nanoid(),
+
     title: "Reverso",
     subject: "Welcome to Reverso",
     description:
@@ -49,7 +55,8 @@ const initialState = [
     time: "27 Feb",
   },
   {
-    id: "7",
+    // id: nanoid(),
+
     title: "InstaForex Analytics",
     subject: "Daily newsletter of analytics",
     description:
@@ -57,7 +64,8 @@ const initialState = [
     time: "28 Feb",
   },
   {
-    id: "8",
+    // id: nanoid(),
+
     title: "Jim Kwik",
     subject: "Love your brain today by doing this…",
     description:
@@ -65,7 +73,8 @@ const initialState = [
     time: "1 Mar",
   },
   {
-    id: "9",
+    // id: nanoid(),
+
     title: "Julia │Lingster",
     subject: "Hilft dir mein Deutschkurs weiter? 💪",
     description:
@@ -73,7 +82,8 @@ const initialState = [
     time: "2 Mar",
   },
   {
-    id: "10",
+    // id: nanoid(),
+
     title: "Advance ",
     subject: "🔥 Exclusive webinar tomorrow",
     description:
@@ -92,7 +102,8 @@ const mailSlice = createSlice({
   },
 });
 
-export const selectAllEmail = (state) => state.mails;
+export const selectAllMail = (state) => state.mails;
+
 export const { mailAdded } = mailSlice.actions;
 
 export default mailSlice.reducer;

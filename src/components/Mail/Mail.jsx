@@ -1,5 +1,6 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useTabs } from "../../hooks/useTabs";
 import "./Mail.css";
 
 // mail__tolsLeft Icons
@@ -18,9 +19,15 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import UnfoldMoreIcon from "@material-ui/icons/UnfoldMore";
 import PrintIcon from "@material-ui/icons/Print";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import { useSelector } from "react-redux";
+import { selectAllMail } from "../../app/features/mailSlice";
 
 const Mail = () => {
   const navigate = useNavigate();
+  const emails = useSelector(selectAllMail);
+  const { id } = useParams();
+
+  const renderMail = emails[id];
 
   return (
     <div className="mail">
@@ -76,15 +83,15 @@ const Mail = () => {
       <div className="mail__body">
         <div className="mail__bodyHeader">
           <div>
-            <h1>Subject</h1>
+            <p>{renderMail.title}</p>
             <IconButton style={{ marginLeft: "-10px" }}>
               <LabelImportantIcon style={{ fontSize: "15px", color: "green", position: "relative", top: "2px" }} />
             </IconButton>
-            <p>Title</p>
+            <h1>{renderMail.subject}</h1>
           </div>
-          <p>10pm</p>
+          <p>{renderMail.time}</p>
         </div>
-        <div className="mail__message">This is a message</div>
+        <div className="mail__message">{renderMail.description}</div>
       </div>
     </div>
   );

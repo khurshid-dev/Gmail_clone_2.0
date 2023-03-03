@@ -18,7 +18,7 @@ function App() {
 
         <div className={`App_body-left ${!sidebarIsOpen ? "w-[90vw]" : "w-[71vw]"}`}>
           <Routes>
-            <Route path="/mail" element={<Mail />} />
+            <Route path="/mail/:id" element={<Mail />} />
             <Route path="/" element={<EmailList />} />
           </Routes>
         </div>
