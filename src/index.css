@@ -27,6 +27,7 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
   position: relative;
+  transition: 0.4s;
 }
 .MuiIconButton-root {
   padding: 10px 5px;

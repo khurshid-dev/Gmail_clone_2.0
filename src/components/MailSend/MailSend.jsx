@@ -8,6 +8,8 @@ import "./MailSend.css";
 import CloseIcon from "@material-ui/icons/Close";
 import { IconButton, Button } from "@material-ui/core";
 
+import Zoom from "react-reveal/Zoom";
+
 function MailSend() {
   const dispatch = useDispatch();
 
@@ -39,47 +41,49 @@ function MailSend() {
   };
 
   return (
-    <div className="mail-send">
-      <div className="mail-send__header">
-        <h4>New Message</h4>
-        <IconButton color="primary" onClick={() => dispatch(closeSendMessage())}>
-          <CloseIcon style={{ color: "white" }} />
-        </IconButton>
-      </div>
-
-      <form>
-        <input type="text" value={title} onChange={titleChange} placeholder="To" />
-
-        <input type="text" value={subject} onChange={subjectChange} placeholder="Subject" />
-
-        <input
-          type="text"
-          value={description}
-          onChange={descriptionChange}
-          placeholder="Text to this message in here ..."
-          className="message-input"
-        />
-        <div className="mail-send__button">
-          <Button
-            variant="outlined"
-            color="primary"
-            style={{
-              textTransform: "capitalize",
-              paddingLeft: "20px",
-              paddingRight: "20px",
-              paddingTop: "4px",
-              paddingBottom: "4px",
-              position: "relative",
-              bottom: "0px",
-            }}
-            type="button"
-            onClick={onClickSaveEmail}
-          >
-            Send
-          </Button>
+    <Zoom>
+      <div className="mail-send">
+        <div className="mail-send__header">
+          <h4>New Message</h4>
+          <IconButton color="primary" onClick={() => dispatch(closeSendMessage())}>
+            <CloseIcon style={{ color: "white" }} />
+          </IconButton>
         </div>
-      </form>
-    </div>
+
+        <form>
+          <input type="text" value={title} onChange={titleChange} placeholder="To" />
+
+          <input type="text" value={subject} onChange={subjectChange} placeholder="Subject" />
+
+          <input
+            type="text"
+            value={description}
+            onChange={descriptionChange}
+            placeholder="Text to this message in here ..."
+            className="message-input"
+          />
+          <div className="mail-send__button">
+            <Button
+              variant="outlined"
+              color="primary"
+              style={{
+                textTransform: "capitalize",
+                paddingLeft: "20px",
+                paddingRight: "20px",
+                paddingTop: "4px",
+                paddingBottom: "4px",
+                position: "relative",
+                bottom: "0px",
+              }}
+              type="button"
+              onClick={onClickSaveEmail}
+            >
+              Send
+            </Button>
+          </div>
+        </form>
+      </div>
+    </Zoom>
   );
 }
 

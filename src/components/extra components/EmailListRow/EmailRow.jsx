@@ -1,27 +1,27 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./EmailRow.css";
 
-import { useNavigate } from "react-router-dom";
-
 import { Checkbox, IconButton } from "@material-ui/core";
-import StarBorderIcon from "@material-ui/icons/StarBorder";
 import LabelImportantIcon from "@material-ui/icons/LabelImportant";
+import { AiOutlineStar } from "react-icons/ai";
 
 function EmailRow({ mailFilt }) {
   const navigate = useNavigate();
+
+  // const toggleStar = () => {
+  //   {
+  //     isStarChoise ? dispatch(unChoiseStar()) : dispatch(choiseStar());
+  //   }
+  // };
 
   const renderEmail = mailFilt.map((email, idx) => (
     <div key={idx} className="email-row flex items-center justify-between text-sm text-primary w-full">
       <div className="email-row__options flex items-center">
         <div>
           <Checkbox color="primary" size="small" />
-          <IconButton style={{ marginLeft: "-10px" }} onClick={() => setStar((prev) => !prev)}>
-            <StarBorderIcon style={{ fontSize: "18px" }} />
-            {/* {!star ? (
-                <StarBorderIcon style={{ fontSize: "18px" }} />
-              ) : (
-                <StarBorderIcon style={{ fontSize: "18px" }} color="secondary" />
-              )} */}
+          <IconButton style={{ marginLeft: "-10px" }}>
+            <AiOutlineStar style={{ fontSize: "20px" }} />
           </IconButton>
           <IconButton style={{ marginLeft: "-10px" }}>
             <LabelImportantIcon style={{ fontSize: "18px" }} />

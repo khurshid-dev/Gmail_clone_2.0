@@ -36,7 +36,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`sidebar-section ${!sidebarIsOpen ? "w-[6vw]" : "w-[22vw]"}`}>
+    <div className={`sidebar-section ${!sidebarIsOpen ? "w-[6vw] transition-all" : "w-[22vw] transition-all"}`}>
       <IconButton
         color="primary"
         style={{
