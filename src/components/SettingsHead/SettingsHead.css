@@ -1,0 +1,41 @@
+.settingsHead {
+  background-image: linear-gradient(to top, #0250c559 0%, #d43f8db3 100%);
+  height: min-content;
+  padding: 16px;
+  color: white;
+  width: 340px;
+  border-radius: 16px;
+  position: absolute;
+  right: 10px;
+}
+.settingsHead > div {
+  border-bottom: 0.5px solid #ffffff8a;
+  padding: 10px 0;
+}
+.settingsHead > h6 {
+  font-size: 18px;
+  color: white;
+  padding-bottom: 10px;
+}
+.setting_title {
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.settingsHead__density .MuiRadio-root {
+  color: rgb(255 255 255);
+}
+.settingsHead__density .MuiRadio-colorPrimary.Mui-checked {
+  color: #ffeb00;
+}
+.settingsHead__density .MuiTypography-body1 {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Labrada", sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}
+.settingsHead__density .MuiFormControlLabel-root {
+  margin-bottom: -7px;
+}

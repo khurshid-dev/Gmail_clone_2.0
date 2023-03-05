@@ -1,28 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   openSideBar,
   closeSideBar,
   selectSideBarIsOpen,
-  selectAppsIsOpen,
   openApps,
   closeApps,
+  selectAppsIsOpen,
+  openSetting,
+  closeSetting,
+  selectSettingIsOpen,
 } from "../../app/features/modalSlice";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
+import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import AppsIcon from "@material-ui/icons/Apps";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
 import SearchIcon from "@material-ui/icons/Search";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "/logo.png";
+import { Avatar } from "@material-ui/core";
 
-const Header = () => {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    "& > *": {
+      margin: theme.spacing(0),
+    },
+  },
+  small: {
+    width: theme.spacing(4),
+    height: theme.spacing(4),
+  },
+}));
+
+const Header = ({ setSearch }) => {
+  const classes = useStyles();
   const dispatch = useDispatch();
   const sidebarIsOpen = useSelector(selectSideBarIsOpen);
   const appsIsOpen = useSelector(selectAppsIsOpen);
+  const settingIsOpen = useSelector(selectSettingIsOpen);
 
   const toggleMenu = () => {
     {
@@ -32,6 +51,11 @@ const Header = () => {
   const toggleApps = () => {
     {
       appsIsOpen ? dispatch(closeApps()) : dispatch(openApps());
+    }
+  };
+  const toggleSetting = () => {
+    {
+      settingIsOpen ? dispatch(closeSetting()) : dispatch(openSetting());
     }
   };
   return (
@@ -48,17 +72,17 @@ const Header = () => {
         <IconButton color="primary" className="absolute left-12">
           <SearchIcon />
         </IconButton>
-        <input type="text" placeholder="Search mail" />
+        <input type="text" placeholder="Search mail" onChange={(e) => setSearch(e.target.value)} />
       </div>
       <div className="header__end flex items-center gap-1 text-white">
         <IconButton color="secondary">
           <AppsIcon className="text-white" onClick={toggleApps} />
         </IconButton>
         <IconButton color="secondary">
-          <SettingsIcon className="text-white" />
+          <SettingsIcon className="text-white" onClick={toggleSetting} />
         </IconButton>
-        <IconButton color="secondary">
-          <AccountCircleIcon className="text-white" />
+        <IconButton color="secondary" className={classes.root}>
+          <Avatar alt="Khurshid Dev" src="/avatar.jpg" className={classes.small} />
         </IconButton>
       </div>
     </div>

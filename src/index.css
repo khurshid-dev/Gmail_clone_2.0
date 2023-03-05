@@ -6,6 +6,9 @@
   .container {
     @apply max-w-[1200px];
   }
+  .body {
+    @apply font-labrada;
+  }
 }
 
 body {
@@ -15,7 +18,7 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   letter-spacing: 0.3px;
-  font-family: "Labrada", serif;
+  font-family: "Labrada", sans-serif;
 }
 
 .App {

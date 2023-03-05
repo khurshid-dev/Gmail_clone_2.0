@@ -6,16 +6,12 @@ import { useNavigate } from "react-router-dom";
 import { Checkbox, IconButton } from "@material-ui/core";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import LabelImportantIcon from "@material-ui/icons/LabelImportant";
-import { useSelector } from "react-redux";
-import { selectAllMail } from "../../../app/features/mailSlice";
 
-function EmailRow() {
+function EmailRow({ mailFilt }) {
   const navigate = useNavigate();
-  const emails = useSelector(selectAllMail);
 
-  // const [star, setStar] = useState(false);
-  const renderEmail = emails.map((email, idx) => (
-    <div key={email.id} className="email-row flex items-center justify-between text-sm text-primary w-full">
+  const renderEmail = mailFilt.map((email, idx) => (
+    <div key={idx} className="email-row flex items-center justify-between text-sm text-primary w-full">
       <div className="email-row__options flex items-center">
         <div>
           <Checkbox color="primary" size="small" />

@@ -6,6 +6,7 @@ export const modalSlice = createSlice({
     sendMessageIsOpen: false,
     sideBarIsOpen: false,
     appsIsOpen: false,
+    settingIsOpen: false,
   },
   reducers: {
     openSendMessage: (state) => {
@@ -28,13 +29,30 @@ export const modalSlice = createSlice({
     closeApps: (state) => {
       state.appsIsOpen = false;
     },
+
+    openSetting: (state) => {
+      state.settingIsOpen = true;
+    },
+    closeSetting: (state) => {
+      state.settingIsOpen = false;
+    },
   },
 });
 
-export const { openSendMessage, closeSendMessage, openSideBar, closeSideBar, openApps, closeApps } = modalSlice.actions;
+export const {
+  openSendMessage,
+  closeSendMessage,
+  openSideBar,
+  closeSideBar,
+  openApps,
+  closeApps,
+  openSetting,
+  closeSetting,
+} = modalSlice.actions;
 
 export const selectMessageIsOpen = (state) => state.modal.sendMessageIsOpen;
 export const selectSideBarIsOpen = (state) => state.modal.sideBarIsOpen;
 export const selectAppsIsOpen = (state) => state.modal.appsIsOpen;
+export const selectSettingIsOpen = (state) => state.modal.settingIsOpen;
 
 export default modalSlice.reducer;

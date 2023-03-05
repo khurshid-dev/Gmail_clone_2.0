@@ -17,7 +17,7 @@ import InboxIcon from "@material-ui/icons/Inbox";
 import PeopleIcon from "@material-ui/icons/People";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 
-const EmailList = () => {
+const EmailList = ({ mailFilt }) => {
   return (
     <div className="emailList">
       <div className="emailList__settings flex items-center justify-between mx-2">
@@ -57,7 +57,7 @@ const EmailList = () => {
       </div>
 
       <div className="emailList__list">
-        <EmailRow />
+        <EmailRow mailFilt={mailFilt} />
       </div>
     </div>
   );
