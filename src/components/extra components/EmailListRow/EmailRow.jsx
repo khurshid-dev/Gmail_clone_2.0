@@ -5,15 +5,10 @@ import "./EmailRow.css";
 import { Checkbox, IconButton } from "@material-ui/core";
 import LabelImportantIcon from "@material-ui/icons/LabelImportant";
 import { AiOutlineStar } from "react-icons/ai";
+import { AiFillStar } from "react-icons/ai";
 
 function EmailRow({ mailFilt }) {
   const navigate = useNavigate();
-
-  // const toggleStar = () => {
-  //   {
-  //     isStarChoise ? dispatch(unChoiseStar()) : dispatch(choiseStar());
-  //   }
-  // };
 
   const renderEmail = mailFilt.map((email, idx) => (
     <div key={idx} className="email-row flex items-center justify-between text-sm text-primary w-full">

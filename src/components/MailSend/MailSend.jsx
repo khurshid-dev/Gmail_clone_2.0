@@ -24,15 +24,7 @@ function MailSend() {
 
   const onClickSaveEmail = () => {
     if (title && subject && description) {
-      dispatch(
-        mailAdded({
-          id: nanoid(),
-          title,
-          subject,
-          description,
-          time,
-        })
-      );
+      dispatch(mailAdded(title, subject, description, time));
       setTitle("");
       setSubject("");
       setDescription("");
